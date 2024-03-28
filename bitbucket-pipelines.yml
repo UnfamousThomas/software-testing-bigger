@@ -1,6 +1,0 @@
-image: openjdk:17
-pipelines:
-  default:
-    - step:
-        script:
-          - ./gradlew test
