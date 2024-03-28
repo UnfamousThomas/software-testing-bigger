@@ -1,12 +1,20 @@
 package ee.ut.math.tvt.salessystem.dataobjects;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 /**
  * Already bought StockItem. SoldItem duplicates name and price for preserving history.
  */
+@Entity
 public class SoldItem {
 
+    @Id
     private Long id;
+    @ManyToOne
     private StockItem stockItem;
     private String name;
     private Integer quantity;
@@ -68,6 +76,6 @@ public class SoldItem {
 
     @Override
     public String toString() {
-        return String.format("SoldItem{id=%d, name='%s'}", id, name);
+        return "Name: " + name + ", quantity: " + quantity + ", price: " + price;
     }
 }

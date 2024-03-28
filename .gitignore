@@ -1,2 +1,6 @@
-target
-.idea
+.gradle/
+.idea/
+build/
+SaleSystemCLI/build
+SaleSystemGUI/build
+data/

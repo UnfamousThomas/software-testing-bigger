@@ -1,8 +1,11 @@
 package ee.ut.math.tvt.salessystem.dao;
 
+import ee.ut.math.tvt.salessystem.dataobjects.Purchase;
 import ee.ut.math.tvt.salessystem.dataobjects.SoldItem;
 import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -34,7 +37,18 @@ public interface SalesSystemDAO {
 
     void saveStockItem(StockItem stockItem);
 
+    void removeStockItem(StockItem stockItem);
+
     void saveSoldItem(SoldItem item);
+
+    void savePurchase(Purchase purchase);
+
+    List<Purchase> getPurchaseList();
+
+    List<Purchase> getLastTenPurchases();
+    List<Purchase> getPurchasesBetweenDates(LocalDateTime firstDate, LocalDateTime secondDate);
+
+    Purchase getPurchaseById(String id);
 
     void beginTransaction();
 
